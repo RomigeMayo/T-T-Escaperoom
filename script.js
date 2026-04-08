@@ -18,7 +18,7 @@ let isTyping = false;
 let hasCrashed = false;
 
 // 🔊 ALARM GELUID
-const alarmSound = new Audio("alarm.MP3");
+const alarmSound = new Audio("alarm.mp3");
 alarmSound.volume = 1.0;
 
 // 🔥 AUTO SCROLL CONTROL
