@@ -17,7 +17,7 @@ let isTyping = false;
 
 let hasCrashed = false;
 
-// 🔥 AUTO SCROLL CONTROL
+//  AUTO SCROLL CONTROL
 let shouldAutoScroll = true;
 
 function scrollToBottomSmooth() {
@@ -29,7 +29,7 @@ function scrollToBottomSmooth() {
     });
 }
 
-// 🔐 LOGIN
+//  LOGIN
 function login() {
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
@@ -38,7 +38,7 @@ function login() {
         loginScreen.style.display = "none";
         terminal.classList.remove("hidden");
 
-        // 🔥 BOOT SEQUENCE (GEEN EXTRA SPACE)
+        //  BOOT SEQUENCE
         print("BOOTING SYSTEM...", false);
         print("LOADING KERNEL...", false);
         print("CHECKING MEMORY...", false);
@@ -46,10 +46,10 @@ function login() {
         print("CONNECTING TO BANK NETWORK...", false);
         print("SECURE CONNECTION ESTABLISHED.", false);
 
-        // 🔥 WEL SPACE HIER
+       
         print("", true);
 
-        // 🔥 NIEUWE BLOCK MET RUIMTE
+        
         print("Welcome, Admin.");
         print("Type 'start' to begin.");
 
@@ -58,12 +58,12 @@ function login() {
     }
 }
 
-// 📂 PATH
+//  PATH
 function getPath() {
     return currentPath.join("\\");
 }
 
-// 🔥 PRINT
+//  PRINT
 function print(text, addSpacing = true, callback) {
     queue.push({ text, addSpacing, callback });
     if (!isTyping) processQueue();
@@ -102,7 +102,7 @@ function processQueue() {
     type();
 }
 
-// 💀 GLITCH
+//  GLITCH
 function glitchEffect() {
     const original = output.innerHTML;
 
@@ -112,10 +112,10 @@ function glitchEffect() {
     setTimeout(() => {
         output.innerHTML = original;
         output.classList.remove("glitch");
-    }, 2500);
+    }, 4500);
 }
 
-// 💀 CRASH
+//  CRASH
 function systemCrash() {
 
     if (hasCrashed) return;
@@ -137,10 +137,10 @@ Connection lost...
 
     setTimeout(() => {
         location.reload();
-    }, 2500);
+    }, 4500);
 }
 
-// ⚡ LOADING
+//  LOADING
 function fakeLoading(callback) {
     loadingContainer.classList.remove("hidden");
 
@@ -162,7 +162,7 @@ function fakeLoading(callback) {
     }, 80);
 }
 
-// 🔐 HACK
+//  HACK
 function fakeHack(callback) {
     let count = 0;
 
@@ -190,7 +190,7 @@ function generateGarbage() {
     return text;
 }
 
-// 🧠 WRONG ANSWER
+//  VERKEERD ANTWOORD
 function handleWrongAnswer(cmd) {
 
     if (hasCrashed) return;
@@ -219,7 +219,7 @@ function handleWrongAnswer(cmd) {
     }
 }
 
-// ⌨️ INPUT
+//  INPUT
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         let value = input.value.trim().toLowerCase();
@@ -239,7 +239,7 @@ input.addEventListener("keydown", (e) => {
     }
 });
 
-// 🧠 CMD + GAME
+//  CMD + VRAGEN
 function handleCommand(cmd) {
 
     if (cmd === "help") {
@@ -283,98 +283,102 @@ function handleCommand(cmd) {
 
     if (step === 0 && cmd === "start") {
         fakeLoading(() => {
-            print("Level 1");
-            print("Vraag: Wat gebruik je om in te loggen?");
+            print("Vraag: Wat is het volgende getal in de reeks?");
+            print("3 – 9 – 27 – 81 – 243 – ?");
         });
         step++;
         return;
     }
 
     if (step === 1) {
-        if (cmd.includes("wachtwoord") || cmd.includes("password")) {
+        if (cmd.includes("729")) {
             print("Correct!");
-            print("Vraag: Hoeveel cijfers heeft een PIN-code?");
+            print("Vraag: Maak één woord van deze letters:");
+            print("U-L-I-S-K")
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 2) {
-        if (cmd === "4") {
+        if (cmd.includes("kluis")) {
             print("Correct!");
-            print("Vraag: Wat gebruik je om je identiteit te bevestigen?");
+            print("vraag: Je hebt 3 cijfers: 2, 3 en 7.");
+            print("Maak het getal 23 met alleen deze cijfers en +, -, ×, ÷");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 3) {
-        if (cmd.includes("pin") || cmd.includes("code") || cmd.includes("id")) {
+        if (cmd.includes("3 x 7 + 2") || cmd.includes("3 x 7 + 2 = 23")|| cmd.includes("3x7+2")|| cmd.includes("3x7+2=23")|| cmd.includes("3x7+2= 23")|| cmd.includes("3 x 7 + 2= 23")) {
             print("Correct!");
-            print("Vraag: Wat is 10 + 5?");
+            print("Vraag: Wat is het volgende woord?");
+            print("Boom – Bos – Boom – Bos – ?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 4) {
-        if (cmd === "15") {
+        if (cmd.includes("Boom") || cmd.includes("boom")) {
             print("Correct!");
-            print("Vraag: Wat is 20 - 7?");
+            print("Vraag: Wat heeft een oog maar kan niet zien?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 5) {
-        if (cmd === "13") {
+        if (cmd.includes("Een naald") || cmd.includes("Een Naald")|| cmd.includes("Naald")|| cmd.includes("naald")) {
             print("Correct!");
-            print("Vraag: Wat beschermt een bank tegen diefstal?");
+            print("Vraag: Hoeveel maanden hebben 28 dagen?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 6) {
-        if (cmd.includes("alarm") || cmd.includes("beveiliging")) {
+        if (cmd.includes("Alle maanden") || cmd.includes("alle maanden") || cmd.includes("Alle Maanden") || cmd.includes("alle") || cmd.includes("Alle")) {
             print("Correct!");
-            print("Vraag: Wat is een firewall?");
+            print("Vraag: Als 3 uur 90 graden is, hoeveel graden is 6 uur dan?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 7) {
-        if (cmd.includes("beveiliging") || cmd.includes("netwerk")) {
+        if (cmd.includes("180 graden") || cmd.includes("180") || cmd.includes("180 Graden")) {
             print("Correct!");
-            print("Vraag: Wat is 6 x 3?");
+            print("Vraag: Hoe meer je deelt, hoe minder je hebt. Wat is het?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 8) {
-        if (cmd === "18") {
+        if (cmd.includes("Een geheim") || cmd.includes("een geheim") || cmd.includes("Geheim") || cmd.includes("geheim")) {
             print("Correct!");
-            print("Vraag: Wat is 12 ÷ 3?");
+            print("Vraag: Wat is het ontbrekende getal?");
+            print("3 × ? + 4 = 19");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 9) {
-        if (cmd === "4") {
+        if (cmd === "5") {
             print("Correct!");
-            print("Vraag: Wat gebeurt er als je wachtwoord fout is?");
+            print("Vraag: Wat is elke bank eigennaar zijn favoriete ding?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 10) {
-        if (cmd.includes("fout") || cmd.includes("blokkeren") || cmd.includes("lock")) {
+        if (cmd.includes("Geld") || cmd.includes("geld")) {
             fakeHack(() => {
-                print("LEVEL VOLTOOID");
+                print("VERIFICATIE VOLTOOID...");
                 print("Toegang tot systeem verkregen.");
                 print("CODE: 4829");
 
@@ -387,7 +391,7 @@ function handleCommand(cmd) {
 
     print("Unknown command.");
 }
-// 🔥 ENTER = LOGIN (WORKING FIX)
+//  ENTER = LOGIN
 window.addEventListener("DOMContentLoaded", () => {
 
     const usernameInput = document.getElementById("username");
