@@ -34,7 +34,7 @@ function login() {
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
 
-    if (user === "Admin" && pass === "6570") {
+    if (user === "Admin" && pass === "6729") {
         loginScreen.style.display = "none";
         terminal.classList.remove("hidden");
 
