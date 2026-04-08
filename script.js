@@ -369,7 +369,7 @@ function handleCommand(cmd) {
     if (step === 9) {
         if (cmd === "5") {
             print("Correct!");
-            print("Vraag: Wat is elke bank eigennaar zijn favoriete ding?");
+            print("Vraag: Wat is elke bankeigenaar zijn favoriete ding?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
