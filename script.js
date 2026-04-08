@@ -17,6 +17,10 @@ let isTyping = false;
 
 let hasCrashed = false;
 
+// 🔊 ALARM GELUID
+const alarmSound = new Audio("alarm.MP3");
+alarmSound.volume = 1.0;
+
 // 🔥 AUTO SCROLL CONTROL
 let shouldAutoScroll = true;
 
@@ -34,7 +38,7 @@ function login() {
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
 
-    if (user === "Admin" && pass === "6570") {
+    if (user === "Admin" && pass === "6729") {
         loginScreen.style.display = "none";
         terminal.classList.remove("hidden");
 
@@ -109,6 +113,11 @@ function glitchEffect() {
     output.classList.add("glitch");
     output.innerHTML = "!SECURITY BREACH DETECTED!";
 
+    // 🔊 ALARM
+    alarmSound.currentTime = 0;
+    alarmSound.loop = true;
+    alarmSound.play();
+
     setTimeout(() => {
         output.innerHTML = original;
         output.classList.remove("glitch");
@@ -122,6 +131,11 @@ function systemCrash() {
     hasCrashed = true;
 
     input.disabled = true;
+
+    // 🔊 ALARM
+    alarmSound.currentTime = 0;
+    alarmSound.loop = true;
+    alarmSound.play();
 
     output.innerHTML = `
 !SYSTEM LOCKDOWN!
