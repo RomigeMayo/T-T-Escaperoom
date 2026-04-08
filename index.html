@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal Escape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔐 LOGIN -->
+<div id="login">
+    <h2>System Login</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="loading-container" class="hidden">
+    <div id="loading-bar"></div>
+</div>
+
+<div id="terminal" class="hidden">
+    <div id="output"></div>
+
+    <div id="input-line">
+        <span>C:\Users\Admin&gt; </span>
+        <input type="text" id="input" autofocus>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
