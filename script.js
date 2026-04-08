@@ -132,10 +132,17 @@ function systemCrash() {
 
     input.disabled = true;
 
-    // 🔊 ALARM
-    alarmSound.currentTime = 0;
+    // 🔊 ALARM BLIJFT VOOR ALTIJD
     alarmSound.loop = true;
+    alarmSound.currentTime = 0;
     alarmSound.play();
+
+    // 🔴 SCHERM FLASH EFFECT (extra sick)
+    let flash = false;
+    const flashInterval = setInterval(() => {
+        document.body.style.backgroundColor = flash ? "black" : "darkred";
+        flash = !flash;
+    }, 200);
 
     output.innerHTML = `
 !SYSTEM LOCKDOWN!
