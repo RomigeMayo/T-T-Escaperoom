@@ -28,6 +28,8 @@ function scrollToBottomSmooth() {
         behavior: "smooth"
     });
 }
+//  NO CURSOR
+document.body.style.cursor = "none";
 
 //  LOGIN
 function login() {
