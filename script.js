@@ -69,7 +69,7 @@ function print(text, addSpacing = true, callback) {
     if (!isTyping) processQueue();
 }
 
-// 🔥 TYPE ENGINE + SMOOTH SCROLL
+//  TYPE ENGINE + SMOOTH SCROLL
 function processQueue() {
     if (queue.length === 0) {
         isTyping = false;
@@ -311,17 +311,17 @@ function handleCommand(cmd) {
     }
 
     if (step === 3) {
-        if (cmd.includes("3 x 7 + 2") || cmd.includes("3 x 7 + 2 = 23")|| cmd.includes("3x7+2")|| cmd.includes("3x7+2=23")|| cmd.includes("3x7+2= 23")|| cmd.includes("3 x 7 + 2= 23")) {
+        if (cmd.includes("3 x 7 + 2") || cmd.includes("3 x 7 + 2 = 23")|| cmd.includes("3x7+2")|| cmd.includes("3x7+2=23")|| cmd.includes("3x7+2= 23")|| cmd.includes("3 x 7 + 2= 23")|| cmd.includes("7 x 3 + 2 = 23")|| cmd.includes("7x3+2=23")|| cmd.includes("7x3+2= 23")) {
             print("Correct!");
             print("Vraag: Wat is het volgende woord?");
-            print("Boom – Bos – Boom – Bos – ?");
+            print("Kluis – Code – Kluis – Code – ?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 4) {
-        if (cmd.includes("Boom") || cmd.includes("boom")) {
+        if (cmd.includes("Kluis") || cmd.includes("kluis")) {
             print("Correct!");
             print("Vraag: Wat heeft een oog maar kan niet zien?");
             step++;
@@ -350,14 +350,15 @@ function handleCommand(cmd) {
     if (step === 7) {
         if (cmd.includes("180 graden") || cmd.includes("180") || cmd.includes("180 Graden")) {
             print("Correct!");
-            print("Vraag: Hoe meer je deelt, hoe minder je hebt. Wat is het?");
+            print("Vraag: Wat is het volgende getal in de reeks?");
+            print("25 – 125 – 625 – 3125 – 15625 – ?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
     }
 
     if (step === 8) {
-        if (cmd.includes("Een geheim") || cmd.includes("een geheim") || cmd.includes("Geheim") || cmd.includes("geheim")) {
+        if (cmd.includes("78125")) {
             print("Correct!");
             print("Vraag: Wat is het ontbrekende getal?");
             print("3 × ? + 4 = 19");
@@ -369,7 +370,7 @@ function handleCommand(cmd) {
     if (step === 9) {
         if (cmd === "5") {
             print("Correct!");
-            print("Vraag: Wat is elke bankeigenaar zijn favoriete ding?");
+            print("Vraag: Wat is elke bank eigennaar zijn favoriete ding?");
             step++;
         } else handleWrongAnswer(cmd);
         return;
@@ -399,7 +400,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     usernameInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-            passwordInput.focus(); // eerst naar wachtwoord
+            passwordInput.focus(); // naar wachtwoord
         }
     });
 
