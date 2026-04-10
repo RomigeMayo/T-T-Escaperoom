@@ -339,7 +339,7 @@ function handleCommand(cmd) {
     }
 
     if (step === 6) {
-        if (cmd.includes("Alle maanden") || cmd.includes("alle maanden") || cmd.includes("Alle Maanden") || cmd.includes("alle") || cmd.includes("Alle")) {
+        if (cmd.includes("Alle maanden") || cmd.includes("alle maanden") || cmd.includes("Alle Maanden") || cmd.includes("alle") || cmd.includes("Alle")|| cmd.includes("12")) {
             print("Correct!");
             print("Vraag: Als 3 uur 90 graden is, hoeveel graden is 6 uur dan?");
             step++;
